@@ -1,0 +1,59 @@
+﻿@model MobileAvailability.Models.Availabilities
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalji</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Proizvođač
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Proizvodjac.Naziv)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trgovina)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trgovina.Naziv)
+        </dd>
+        <dt>
+            Datum predaje oglasa
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PredajaOglasa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cijena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cijena)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dostupnost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dostupnost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Promjeni</a> |
+    <a asp-action="Index">Natrag na listu</a>
+</div>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MobileAvailability.Models.Availabilities>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Dodaj novi</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Proizvođač
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trgovina)
+            </th>
+            <th>
+                Datum predaje oglasa
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cijena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dostupnost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kontakt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proizvodjac.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trgovina.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PredajaOglasa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cijena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dostupnost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kontakt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Promjeni</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalji</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Obriši</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

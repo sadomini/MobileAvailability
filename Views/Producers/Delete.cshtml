@@ -1,0 +1,27 @@
+﻿@model MobileAvailability.Models.Producer
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Obriši</h2>
+
+<h3>Želite li obrisati?</h3>
+<div>
+    <h4>Producer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Natrag na listu</a>
+    </form>
+</div>

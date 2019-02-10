@@ -1,0 +1,63 @@
+﻿@model MobileAvailability.Models.Availabilities
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Availabilities</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProizvodjacId" class="control-label">Proizvođač</label>
+                <select asp-for="ProizvodjacId" class ="form-control" asp-items="ViewBag.ProizvodjacId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tip" class="control-label"></label>
+                <input asp-for="Tip" class="form-control" />
+                <span asp-validation-for="Tip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrgovinaId" class="control-label"></label>
+                <select asp-for="TrgovinaId" class ="form-control" asp-items="ViewBag.TrgovinaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PredajaOglasa" class="control-label">Datum predaje oglasa</label>
+                <input asp-for="PredajaOglasa" class="form-control" />
+                <span asp-validation-for="PredajaOglasa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cijena" class="control-label"></label>
+                <input asp-for="Cijena" class="form-control" />
+                <span asp-validation-for="Cijena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Dostupnost" /> @Html.DisplayNameFor(model => model.Dostupnost)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kontakt" class="control-label"></label>
+                <input asp-for="Kontakt" class="form-control" />
+                <span asp-validation-for="Kontakt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="dodaj novi" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Natrag na listu</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
